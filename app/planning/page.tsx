@@ -2,6 +2,22 @@ import { MainPageImages } from "@/public/images/mainPage";
 import Image from "next/image";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Планування — Green House Калинів | План поверхів та секцій",
+  description:
+    "Перегляньте планування поверхів житлового комплексу Green House Калинів. Детальні схеми секцій, раціональні планування та продумані простори сучасного малоповерхового будинку.",
+  keywords:
+    "планування Green House Калинів, план поверху, схема секції, планування квартир, Новий Калинів, житловий комплекс, сучасні планування",
+  openGraph: {
+    title: "Планування — Green House Калинів",
+    description:
+      "Ознайомтеся з детальними плануваннями поверхів та секцій у ЖК Green House Калинів. Раціональні рішення та комфортні простори.",
+    url: "https://greenhouse-kalyniv.com/planning",
+    siteName: "Green House Калинів",
+    type: "website",
+  },
+};
+
 export default function PlanningPage() {
   return (
     <section className="w-full max-w-7xl mx-auto px-4 py-20">
@@ -29,7 +45,6 @@ export default function PlanningPage() {
 
       {/* TWO BUTTONS */}
       <div className="flex flex-col md:flex-row justify-center items-center gap-4 mt-10">
-        
         <Link
           href="/contacts"
           className="
@@ -59,7 +74,6 @@ export default function PlanningPage() {
         >
           На головну
         </Link>
-
       </div>
     </section>
   );

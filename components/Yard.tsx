@@ -1,6 +1,9 @@
+"use client";
+
 import { MainPageImages } from "@/public/images/mainPage";
 import { TreePine, Shield, Users, Flower2, CarFront, Bike } from "lucide-react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const features = [
   {
@@ -37,9 +40,17 @@ const features = [
 
 export function Yard() {
   return (
-    <section className="py-4 md:py-12 flex flex-col items-center ">
+    <section className="py-4 md:py-12 flex flex-col items-center">
       <div className="container">
-        <div className="max-w-3xl mx-auto text-center mb-6">
+        
+        {/* TITLE BLOCK */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="max-w-3xl mx-auto text-center mb-6"
+        >
           <h2 className="mb-6 heading-2 text-[var(--color-graphite)]">
             Безпека. Простір. Комфорт.
           </h2>
@@ -48,9 +59,16 @@ export function Yard() {
             безпеці, де можна випити каву на лавці, тренуватися на вуличних
             тренажерах або зустрітися з сусідами.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="mb-10">
+        {/* YARD IMAGE */}
+        <motion.div
+          initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="mb-10"
+        >
           <div className="relative px-3 overflow-hidden">
             <Image
               src={MainPageImages.shemeYard}
@@ -58,19 +76,37 @@ export function Yard() {
               className="w-full lg:w-2/3 mx-auto h-auto object-cover"
             />
           </div>
-        </div>
-        <div className="flex text-center flex items-center justify-center">
+        </motion.div>
+
+        {/* SUBTITLE */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="flex text-center justify-center"
+        >
           <h2 className="text-lead w-10/12 heading-3 text-[var(--color-grey-600)] px-3 pb-3">
             Це територія, де відчувається простір. Двір, у який хочеться вийти —
             де приємно проводити час
           </h2>
-        </div>
+        </motion.div>
+
+        {/* FEATURES GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-3">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.6,
+                  ease: "easeOut",
+                  delay: index * 0.12, // stagger через transition, що підтримує motion-dom
+                }}
+                viewport={{ once: true }}
                 className="p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300"
               >
                 <div className="w-14 h-14 rounded-xl bg-[var(--color-primary-green)]/10 flex items-center justify-center mb-5">
@@ -82,7 +118,7 @@ export function Yard() {
                 <p className="text-[var(--color-grey-500)]">
                   {feature.description}
                 </p>
-              </div>
+              </motion.div>
             );
           })}
         </div>

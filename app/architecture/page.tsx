@@ -2,6 +2,22 @@ import Image from "next/image";
 import { MainPageImages } from "@/public/images/mainPage";
 import Link from "next/link";
 
+export const metadata = {
+    title: "Архітектурні рішення — Green House Калинів | Креслення та плани",
+    description:
+      "Перегляньте архітектурні рішення житлового комплексу Green House Калинів: плани поверхів, технічні креслення, конструктивні рішення та документацію у форматі PDF.",
+    keywords:
+      "архітектурні рішення, плани поверхів, креслення, план поверху, Green House Калинів, документація ЖК, архітектура новобудови",
+    openGraph: {
+      title: "Архітектурні рішення — Green House Калинів",
+      description:
+        "Повна архітектурна документація: плани поверхів та основні креслення у PDF. Сучасна архітектура та продумане планування.",
+      url: "https://greenhouse-kalyniv.com/architecture",
+      siteName: "Green House Калинів",
+      type: "article",
+    },
+  };
+
 export default function ArchitecturePage() {
   return (
     <section className="w-full mx-auto px-4 py-10">

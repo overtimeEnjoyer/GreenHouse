@@ -5,8 +5,7 @@ import { ArrowRight, Home } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-
+import { motion } from "framer-motion";
 
 const apartmentTypes = [
   {
@@ -33,7 +32,6 @@ const apartmentTypes = [
 
 export function Apartments() {
   const pathname = usePathname();
-
   const isApartmentsPage = pathname === "/apartments";
 
   return (
@@ -43,29 +41,55 @@ export function Apartments() {
         isApartmentsPage ? "pb-10 pt-30" : "py-15"
       } `}
     >
-      <Image
-        src={MainPageImages.ornament}
-        alt="ornament"
-        className="block md:hidden rotate-90 w-[53%] -mt-40 translate-x-20 sm:translate-x-34 md:translate-x-43"
-      />
+      {/* ORNAMENT MOBILE */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
+        <Image
+          src={MainPageImages.ornament}
+          alt="ornament"
+          className="block md:hidden rotate-90 w-[53%] -mt-40 translate-x-20 sm:translate-x-34 md:translate-x-43"
+        />
+      </motion.div>
 
       <div className="flex flex-row gap-6 justify-around -mt-16">
+
         <div className="flex flex-col justify-center">
           <div className="max-w-3xl flex flex-col justify-center">
-            <div className="w-full mx-auto text-center mb-16">
+
+            {/* TITLE BLOCK */}
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="w-full mx-auto text-center mb-16"
+            >
               <h2 className="mb-6 heading-2 md:text-4xl lg:text-5xl xl:text-7xl text-[var(--color-graphite)]">
                 Квартири та комерційні приміщення
               </h2>
               <p className="heading-3 text-[15px] md:text-[20px] lg:text-xl xl:text-3xl text-[var(--color-grey-600)]">
                 Підберіть планування, яке ідеально підходить для вас
               </p>
-            </div>
+            </motion.div>
           </div>
 
+          {/* APARTMENT CARDS */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-6 mb-12">
             {apartmentTypes.map((apartment, index) => (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.6,
+                  ease: "easeOut",
+                  delay: index * 0.12,
+                }}
+                viewport={{ once: true }}
                 className="group p-3 lg:p-8 bg-[var(--color-grey-50)] rounded-2xl border border-[var(--color-grey-200)] hover:border-[var(--color-primary-green)] hover:shadow-lg transition-all duration-300"
               >
                 <div className="w-14 h-14 rounded-xl border-2 border-[#8da794] bg-white flex items-center justify-center mb-5 group-hover:bg-[var(--color-primary-green)] transition-colors duration-300">
@@ -82,11 +106,18 @@ export function Apartments() {
                 <p className="text-lg md:text-sm font-grava font-bold text-[var(--color-grey-500)]">
                   {apartment.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
 
-          <div className="flex flex-col md:flex-row justify-center gap-4 mt-4">
+          {/* BUTTONS */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="flex flex-col md:flex-row justify-center gap-4 mt-4"
+          >
             <Link
               href="/planning"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 font-grava text-xl bg-[var(--color-primary-green)] text-white rounded-lg hover:bg-[var(--color-primary-green-dark)] transition-all duration-300 shadow-lg hover:shadow-xl w-full md:w-auto"
@@ -103,14 +134,25 @@ export function Apartments() {
                 На головну
               </Link>
             )}
-          </div>
+          </motion.div>
+
         </div>
 
-        <Image
-          src={MainPageImages.ornament}
-          alt="ornament"
+        {/* ORNAMENT DESKTOP */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
           className="hidden md:block md:w-8/12 lg:w-7/12 xl:w-5/12"
-        />
+        >
+          <Image
+            src={MainPageImages.ornament}
+            alt="ornament"
+            className="w-full h-auto"
+          />
+        </motion.div>
+
       </div>
     </section>
   );
