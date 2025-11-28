@@ -19,16 +19,30 @@ const grava = localFont({
   variable: "--font-grava",
 });
 
-export const metadata: Metadata = {
+
+
+export const metadata = {
   title: "Green House Калинів — сучасні квартири та комерційні приміщення",
   description:
-    "Green House Калинів — сучасний малоповерховий житловий комплекс у центрі Нового Калинова. Панорамні вікна, теплі фасади, продумане планування, власний двір та дитячі зони. Оберіть 1–3 кімнатну квартиру або комерційне приміщення у комфортному та екологічному середовищі.",
-  icons: {
-    icon: "/icon192.svg",
-    apple: "/icon192.svg",
+    "Green House Калинів — сучасний житловий комплекс у центрі Нового Калинова. Панорамні вікна, ліфт, теплі фасади, продумані планування та власний двір. Оберіть комфортне та екологічне житло.",
+  openGraph: {
+    title: "Green House Калинів — сучасний житловий комплекс",
+    description:
+      "Сучасні квартири та комерційні приміщення у серці Нового Калинова. Панорамні вікна, теплі фасади, комфорт та екологія.",
+    url: "https://www.greenhouse-kalyniv.com",
+    siteName: "Green House Калинів",
+      manifest: "/manifest.json",
+    images: [
+      {
+        url: "/logoToSeoBaner.svg", // скинь фото — згенерую
+        width: 1200,
+        height: 630,
+        alt: "Green House Калинів",
+      },
+    ],
   },
-  manifest: "/manifest.json",
 };
+
 
 
 export default function RootLayout({
