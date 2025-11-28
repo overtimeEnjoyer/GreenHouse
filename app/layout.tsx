@@ -37,7 +37,7 @@ export const metadata = {
       },
     images: [
       {
-        url: "/og-main.jpg", // скинь фото — згенерую
+        url: "/logoToSeoBaner.svg", 
         width: 1200,
         height: 630,
         alt: "Green House Калинів",
