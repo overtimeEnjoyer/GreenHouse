@@ -19,25 +19,27 @@ const grava = localFont({
   variable: "--font-grava",
 });
 
-
 export const metadata = {
   title: "Green House Калинів — сучасні квартири та комерційні приміщення",
   description:
     "Green House Калинів — сучасний житловий комплекс у центрі Нового Калинова. Панорамні вікна, ліфт, теплі фасади, продумані планування та власний двір. Оберіть комфортне та екологічне житло.",
+
+  icons: {
+    icon: "/icon192.svg",
+    apple: "/icon192.svg",
+  },
+
+  manifest: "/manifest.json",
+
   openGraph: {
     title: "Green House Калинів — сучасний житловий комплекс",
     description:
       "Сучасні квартири та комерційні приміщення у серці Нового Калинова. Панорамні вікна, теплі фасади, комфорт та екологія.",
     url: "https://www.greenhouse-kalyniv.com",
     siteName: "Green House Калинів",
-      manifest: "/manifest.json",
-      icons: {
-        icon: "/icon192.svg",
-        apple: "/icon192.svg",
-      },
     images: [
       {
-        url: "/logoToSeoBaner.svg", 
+        url: "/logoToSeoBaner.svg",
         width: 1200,
         height: 630,
         alt: "Green House Калинів",
@@ -45,8 +47,6 @@ export const metadata = {
     ],
   },
 };
-
-
 
 export default function RootLayout({
   children,
@@ -71,9 +71,7 @@ export default function RootLayout({
         </div>
 
         {/* MAIN CONTENT — займає весь простір */}
-        <main className="flex-1">
-          {children}
-        </main>
+        <main className="flex-1">{children}</main>
 
         {/* FOOTER завжди внизу */}
         <Footer />
