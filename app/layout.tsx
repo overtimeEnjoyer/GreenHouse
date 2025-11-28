@@ -20,7 +20,6 @@ const grava = localFont({
 });
 
 
-
 export const metadata = {
   title: "Green House Калинів — сучасні квартири та комерційні приміщення",
   description:
@@ -32,9 +31,13 @@ export const metadata = {
     url: "https://www.greenhouse-kalyniv.com",
     siteName: "Green House Калинів",
       manifest: "/manifest.json",
+      icons: {
+        icon: "/icon192.svg",
+        apple: "/icon192.svg",
+      },
     images: [
       {
-        url: "/logoToSeoBaner.svg", // скинь фото — згенерую
+        url: "/og-main.jpg", // скинь фото — згенерую
         width: 1200,
         height: 630,
         alt: "Green House Калинів",
