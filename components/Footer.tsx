@@ -12,11 +12,7 @@ export function Footer() {
   const isDarkFooter = pathname === "/" || pathname === "/contacts";
 
   return (
-    <motion.footer
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true }}
+    <footer
       className={`
         py-8 border-t flex flex-col items-center transition-all duration-300
         ${
@@ -28,7 +24,6 @@ export function Footer() {
     >
       <div className="container">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -65,9 +60,8 @@ export function Footer() {
           >
             © 2024 Green House Калинів. Всі права захищені.
           </motion.div>
-
         </div>
       </div>
-    </motion.footer>
+    </footer>
   );
 }

@@ -68,12 +68,8 @@ export function Contact() {
         />
       )}
 
-      <motion.section
+      <section
         id="contact"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true }}
         className="py-24 md:py-32 bg-[var(--color-graphite)] flex flex-col justify-center items-center px-5 md:px-0"
       >
         <div className="container">
@@ -305,7 +301,7 @@ export function Contact() {
             </motion.div>
           </div>
         </div>
-      </motion.section>
+      </section>
     </>
   );
 }
