@@ -13,7 +13,6 @@ export function Hero() {
 
   return (
     <section className="relative h-screen min-h-[700px] flex items-center p-3">
-      {/* BG */}
       <div className="absolute inset-0 z-0">
         <Image
           src={MainPageImages.mainBackGround}
@@ -23,7 +22,6 @@ export function Hero() {
         <div className="absolute inset-0 bg-linear-to-r from-black/60 to-black/60"></div>
       </div>
 
-      {/* CONTENT */}
       <motion.div
         className="container relative z-10"
         initial={{ opacity: 0, y: 40 }}
@@ -31,8 +29,6 @@ export function Hero() {
         transition={{ duration: 0.9, ease: "easeOut" }}
       >
         <div className="max-w-5xl">
-
-          {/* TITLE */}
           <motion.h1
             className="heading-2 mb-6"
             initial={{ opacity: 0, y: 20 }}
@@ -41,16 +37,6 @@ export function Hero() {
           >
             Green House Калинів — сучасний будинок у центрі Нового Калинова.
           </motion.h1>
-
-          <motion.p
-            className="heading-3 mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35, duration: 0.7 }}
-          >
-            Затишна архітектура, панорамні вікна, продуманий благоустрій і
-            простір для життя
-          </motion.p>
 
           <motion.div
             className="flex items-center gap-2 text-white/90 mb-8"

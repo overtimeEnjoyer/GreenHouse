@@ -43,7 +43,6 @@ export function Yard() {
     <section className="py-4 md:py-12 flex flex-col items-center">
       <div className="container">
         
-        {/* TITLE BLOCK */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

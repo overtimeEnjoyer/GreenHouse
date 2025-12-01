@@ -66,7 +66,7 @@ export default function RootLayout({
         `}
       >
         {/* HEADER */}
-        <div className="h-25">
+        <div className="h-20">
           <Header />
         </div>
 

@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const advantages = [
   { icon: Building2, title: "6 поверхів", description: "комфортний формат" },
@@ -50,12 +51,22 @@ const maskVariant = {
     clipPath: "inset(0 0% 0 0)",
     transition: {
       duration: 0.8,
-      ease: [0.25, 0.1, 0.25, 1], // cubic-bezier (easeOut)
+      ease: [0.25, 0.1, 0.25, 1],
     },
   },
 } as const;
 
 export function AboutComplex() {
+  const [lessThanSm, setLessThanSm] = useState(false);
+
+  useEffect(() => {
+    const checkSize = () => setLessThanSm(window.innerWidth < 640);
+    checkSize();
+    window.addEventListener("resize", checkSize);
+
+    return () => window.removeEventListener("resize", checkSize);
+  }, []);
+
   return (
     <section
       id="about"
@@ -68,7 +79,7 @@ export function AboutComplex() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="mb-6 text-(--color-graphite) font-kudriashov md:text-3xl xl:text-5xl leading-tight"
+          className="mb-6 text-(--color-graphite) font-kudriashov text-2xl md:text-3xl xl:text-5xl leading-tight"
         >
           Ми створили будинок, у якому хочеться жити щодня
         </motion.h2>
@@ -104,38 +115,72 @@ export function AboutComplex() {
               />
             </div>
           </motion.div>
-
-          {/* ADVANTAGES GRID */}
-          <motion.div className="w-full md:w-1/2 order-1 md:order-2 grid grid-cols-2 gap-2 lg:gap-6">
-            {advantages.map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <motion.div
-                  key={index}
-                  variants={maskVariant}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.15 }}
-                  className="flex gap-4 items-start"
-                >
-                  <div className="shrink-0 w-12 h-12 rounded-xl bg-(--color-primary-green)/10 flex items-center justify-center">
-                    <Icon className="w-6 h-6 text-(--color-primary-green)" />
-                  </div>
-                  <div>
-                    <h4 className="md:mb-1 text-[12px] leading-3 lg:leading-5 md:text-[14px] lg:text-lg text-(--color-graphite)">
-                      {item.title}
+          {!lessThanSm && (
+            <motion.div className="w-full md:w-1/2 order-1 md:order-2 grid grid-cols-2 gap-2 lg:gap-6">
+              {advantages.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div
+                    key={index}
+                    variants={maskVariant}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.15 }}
+                    className="flex gap-4 items-start"
+                  >
+                    <div className="shrink-0 w-12 h-12 rounded-xl bg-(--color-primary-green)/10 flex items-center justify-center">
+                      <Icon className="w-6 h-6 text-(--color-primary-green)" />
+                    </div>
+                    <div>
+                      <h4 className="md:mb-1 text-[12px] leading-3 lg:leading-5 md:text-[14px] lg:text-lg text-(--color-graphite)">
+                        {item.title}
+                      </h4>
+                      <p className="text-[12px] leading-3 lg:leading-5 md:text-[10px] lg:text-sm text-(--color-grey-500)">
+                        {item.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+          )}
+          {lessThanSm && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-3">
+              {advantages.map((feature, index) => {
+                const Icon = feature.icon;
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 25 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.6,
+                      ease: "easeOut",
+                      delay: index * 0.12,
+                    }}
+                    viewport={{ once: true }}
+                    className="p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300"
+                  >
+                    <div className="w-14 h-14 rounded-xl bg-[var(--color-primary-green)]/10 flex items-center justify-center mb-5">
+                      <Icon className="w-7 h-7 text-[var(--color-primary-green)]" />
+                    </div>
+                    <h4 className="mb-2 text-[var(--color-graphite)]">
+                      {feature.title}
                     </h4>
-                    <p className="text-[12px] leading-3 lg:leading-5 md:text-[10px] lg:text-sm text-(--color-grey-500)">
-                      {item.description}
+                    <p className="text-[var(--color-grey-500)]">
+                      {feature.description}
                     </p>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </motion.div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          )}
         </div>
       </div>
     </section>
   );
+}
+function setLessThanLg(arg0: boolean) {
+  throw new Error("Function not implemented.");
 }
