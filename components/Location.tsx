@@ -48,8 +48,9 @@ export function Location() {
             </h2>
 
             <p className="mb-5 heading-3 text-[15px] md:text-[18px] lg:text-xl font-grava text-[var(--color-grey-600)]">
-              Локація, у якій поєднано комфорт невеликого містечка та доступність
-              до великих міст. Тут тихо, світло й безпечно — і це головне.
+              Локація, у якій поєднано комфорт невеликого містечка та
+              доступність до великих міст. Тут тихо, світло й безпечно — і це
+              головне.
             </p>
 
             <div className="mb-10">
@@ -57,7 +58,7 @@ export function Location() {
                 Адреса:
               </p>
               <p className="text-[var(--color-graphite)] text-[18px] font-grava">
-                вул. Авіації, 19, Новий Калинів, Львівська обл.
+                вул. Авіації, 19б, Новий Калинів, Львівська обл.
               </p>
             </div>
 
@@ -94,7 +95,7 @@ export function Location() {
           <div>
             <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[500px] bg-[var(--color-grey-200)]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3228.3929378348003!2d23.297620390117327!3d49.55801858551841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473ba8b0309847c1%3A0x49bbb96cd800a2d8!2z0L_Qu9C-0YnQsCDQkNCy0ZbQsNGG0ZbRlywgMTksINCd0L7QstC40Lkg0JrQsNC70LjQvdGW0LIsINCb0YzQstGW0LLRgdGM0LrQsCDQvtCx0LvQsNGB0YLRjCwgODE0NjQ!5e1!3m2!1suk!2sua!4v1764194201212!5m2!1suk!2sua"
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1174.1037003789606!2d23.299408265344905!3d49.55863031641445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDnCsDMzJzMwLjgiTiAyM8KwMTcnNTguOCJF!5e1!3m2!1suk!2sua!4v1764702239203!5m2!1suk!2sua"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
