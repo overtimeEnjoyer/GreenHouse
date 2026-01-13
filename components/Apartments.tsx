@@ -10,17 +10,17 @@ import { motion } from "framer-motion";
 const apartmentTypes = [
   {
     type: "1-кімнатні",
-    area: "38–44 м²",
+    area: "39,01 – 49,29 м²",
     description: "Комфорт для одного чи пари",
   },
   {
     type: "2-кімнатні",
-    area: "54–73 м²",
+    area: "53,19 - 72,93 м²",
     description: "Ідеально для невеликої сім'ї",
   },
   {
     type: "3-кімнатні",
-    area: "93 м²",
+    area: "92,71 м²",
     description: "Простір для всієї родини",
   },
   {

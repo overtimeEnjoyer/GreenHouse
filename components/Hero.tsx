@@ -46,7 +46,7 @@ export function Hero() {
           >
             <MapPin className="w-7 h-7" />
             <span className="font-grava text-xl">
-              вул. Авіації, 19 — Новий Калинів, Львівська обл.
+              пл. Авіації, 19 б — Новий Калинів, Львівська обл.
             </span>
           </motion.div>
 

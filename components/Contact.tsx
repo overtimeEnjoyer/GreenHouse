@@ -107,8 +107,8 @@ export function Contact() {
                     label: "Режим роботи:",
                     content: (
                       <>
-                        <p className="text-white">Пн–Пт: 9:00–18:00</p>
-                        <p className="text-white">Сб: 10:00–16:00</p>
+                        <p className="text-white">Пн–Пт: 08:00-17:00</p>
+                        <p className="text-white">Сб: 11:00-15:00</p>
                       </>
                     ),
                   },
